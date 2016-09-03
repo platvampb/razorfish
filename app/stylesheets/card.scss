@@ -70,9 +70,12 @@
 	}
 	&.likes {
 		cursor: pointer;
-		transition: $color-transiton;
-		&:hover, &.liked {
+		transition: $background-transiton;
+		&.liked {
 			color: $orange;
+		}
+		&:hover {
+			background-color: $grey;
 		}
 	}
 }
