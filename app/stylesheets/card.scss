@@ -1,0 +1,101 @@
+@import "variables";
+
+.card-wrapper {
+	float: left;
+	padding: 12px;
+}
+
+.card {
+	border-radius: 5px;
+	overflow: hidden;
+	background: white;
+	box-shadow: $shallow-box-shadow;
+	float: left;
+	max-width: 20rem;
+	position: relative;
+}
+
+.card-info {
+	float: left;
+	width: 100%;
+}
+
+.avatar-wrapper {
+	float: left;
+	margin: 12px 20px;
+	border-radius: 50%;
+	background-color: $chocolate;
+	padding: 5px;
+	img {
+		border-radius: 50%;
+		width: 72px;
+		float: left;
+	}
+}
+
+.info-wrapper {
+	margin: 12px;
+	padding: 0 6px 0 112px;
+	color: $dark-chocolate;
+}
+.full-name {
+	font-size: 28px;
+	font-weight: bold;
+}
+.summary {
+	font-size: 15px;
+	p {
+		margin-top: 6px;
+	}
+}
+.card-actions {
+	width: 100%;
+}
+.card-action {
+	width: 33.3%;
+	display: inline-block;
+	padding: 12px	0;
+	text-align: center;
+	background: $light-grey;
+	border-left: 1px solid white;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	color: $dark-chocolate;
+	&:first-child {
+		border-left: 0;
+	}
+	i {
+		margin-right: 8px;
+	}
+	&.likes {
+		cursor: pointer;
+		transition: $color-transiton;
+		&:hover, &.liked {
+			color: $orange;
+		}
+	}
+}
+
+@media screen and (max-width:680px) {
+	.card-wrapper {
+		width: 100%;
+		padding-left: 0;
+	}
+	.card {
+		margin: 0 auto;
+		float: none;
+	}
+}
+
+@media screen and (max-width:420px) {
+	.card-wrapper {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.card {
+		max-width: 98%;
+		width: 98%;
+	}
+}

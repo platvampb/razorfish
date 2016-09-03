@@ -1,8 +1,26 @@
 html {
   font-family: sans-serif;
-	font-size: 25px;
+	font-size: 20px;
+	height: 100%;
 }
 
-* {
-	font-size: 25px;
+$almond: #9a795b;
+$salmon: #bf7b6b;
+$sand: #d1bf9b;
+body {
+	height: 100%;
+	overflow: hidden;
+	background: orange;  /*For browsers that do not support gradients */
+	background:
+		-webkit-linear-gradient(left, transparent, coral), /* For Safari 5.1 to 6.0 */
+		-webkit-linear-gradient(left top, $sand, orange); /* For Safari 5.1 to 6.0 */
+	background:
+		-o-linear-gradient(right, transparent, coral), /* For Opera 11.1 to 12.0 */
+		-o-linear-gradient(bottom right, $sand, orange); /* For Opera 11.1 to 12.0 */
+	background:
+		-moz-linear-gradient(right, transparent, coral),
+		-moz-linear-gradient(bottom right, $sand, orange); /* Standard syntax */
+	background:
+		linear-gradient(to right, transparent, coral),
+		linear-gradient(to bottom right, $sand, orange); /* Standard syntax */
 }

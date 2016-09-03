@@ -8,28 +8,32 @@ module.exports = {
 	entry: [
 		'webpack-dev-server/client?http://0.0.0.0:8080',
 		'webpack/hot/only-dev-server',
-		"./app/app.js"
+		'./app/app.js'
 	],
 	output: {
 		path: './build',
 		filename: "bundle.js"
 	},
+	devtool: 'eval-source-map',
+	resolve: {
+			extensions: ['', '.js', '.jsx']
+	},
 	module: {
 		loaders: [
-			{ test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/},
-			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: {presets: ['es2015', 'react']}},
+			{ test: /\.jsx|\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/},
+			{ test: /\.jsx|\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: {presets: ['react']}},
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
 				loader: ExtractTextPlugin.extract('style-loader', 'css!sass?outputStyle=expanded')
-			}
+			},
 		]
 	},
 	devServer: {
 		contentBase: "./build",
 	},
 	plugins: [
-		new ExtractTextPlugin('[name].css'),
+		new ExtractTextPlugin('app.css'),
 		devFlagPlugin,
 		new webpack.NoErrorsPlugin()
 	]
